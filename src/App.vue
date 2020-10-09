@@ -6,12 +6,20 @@
       <li>test</li>
       <li>test2</li>
     </ul>
+    {{ exresponse }}
   </div>
 </template>
 
 <script>
+import json from "./testFiles/exampleResponse.json";
+
 export default {
   name: "App",
+  data: function () {
+    return {
+      exresponse: json,
+    };
+  },
 };
 </script>
 
