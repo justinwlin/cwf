@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Hello world</h1>
+    <HelloWorld></HelloWorld>
+    <HelloWorld />
     <p>This should show up properly!</p>
     <ul>
       <li>test</li>
@@ -12,9 +13,12 @@
 
 <script>
 import json from "./testFiles/exampleResponse.json";
-
+import HelloWorld from "./components/HelloWorld";
 export default {
   name: "App",
+  components: {
+    HelloWorld,
+  },
   data: function () {
     return {
       exresponse: json,
