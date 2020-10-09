@@ -1,13 +1,9 @@
 <template>
   <div>
+    <h1>OTHER PAGES</h1>
+    <h1>INPUT - UPLOAD A FILE</h1>
+    <h1>SHOW THE PARSED RESULTS</h1>
     <HelloWorld></HelloWorld>
-    <HelloWorld />
-    <p>This should show up properly!</p>
-    <ul>
-      <li>test</li>
-      <li>test2</li>
-    </ul>
-    {{ exresponse }}
   </div>
 </template>
 
