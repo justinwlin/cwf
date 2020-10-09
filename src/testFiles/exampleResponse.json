@@ -1,0 +1,102 @@
+{
+    "createdAt": 1601942405170,
+    "lastStoryAt": 1601942405170,
+    "names": [
+        "Justin Lin"
+    ],
+    "emails": [
+        {
+            "value": "justinwlin@gmail.com",
+            "canonical": "justinwlin@gmail.com"
+        }
+    ],
+    "links": [
+        {
+            "path": "/justinwlin",
+            "domain": "github.com",
+            "url": "github.com/justinwlin"
+        },
+        {
+            "path": "/jwlCEC",
+            "domain": "tinyurl.com",
+            "url": "https://tinyurl.com/jwlCEC"
+        },
+        {
+            "path": "/jwlFD",
+            "domain": "tinyurl.com",
+            "url": "https://tinyurl.com/jwlFD"
+        }
+    ],
+    "summary": {
+        "experience": "JUSTIN LIN's experience appears to be strongly concentrated in Information Technology (mostly Programming) and slightly concentrated in User Experience (mostly User Research). JUSTIN LIN's experience appears to be entry level, with 13 months of experience.",
+        "workTime": {
+            "months": 13,
+            "years": 1
+        },
+        "managementTime": {
+            "months": 0,
+            "years": 0
+        },
+        "skills": "Skillsets:\r\nProgramming languages / Tools: C++, C#, Python, Javascript, Swift, Java, Node.js, Typescript, React, Vue,\r\nRedux, GraphQL, Figma, Postgresql, mySQL, Jest, MQL4, Numpy, Pandas, Matplotlib, Jupyter, Unity, Docker and\r\nKubernetes, AWS, Firebase, Webpack, Babel\r\nRelated Courses: Data structures, Object Oriented Programming, Algorithms, Introduction to Databases, Computer\r\nArchitecture, Introduction to Artificial Intelligence, Computer Security, Computer Networking, Operating System,\r\nSoftware Engineering"
+    },
+    "positions": [
+        {
+            "title": "Software Development Engineer Intern",
+            "org": "Amazon",
+            "summary": "Developed features for a noSQL database GUI application such as: being able to import JSON templates from other AWS services and supporting bulk importing of data. These features aimed to solve customer problems on\r\nan individual and enterprise level for integrating the application into existing workflow.\r\n\n\n• Was able to solve challenges such as learning Vue and Typescript while on the job, and able to propose and create\r\neverything from UI mockups, technical specifications, and implementation details to teammates and manager.\r\n\n\n• Technology: Figma, Vue, Typescript, Electron, Jest, Webpack, Babel, Figma, Adobe XD",
+            "start": {
+                "year": 2020,
+                "month": 5,
+                "timestamp": 1588316400000
+            },
+            "end": {
+                "year": 2020,
+                "month": 8,
+                "timestamp": 1596265200000
+            }
+        },
+        {
+            "title": "Full-Stack Software Engineer and Manager",
+            "org": "HelloSession",
+            "summary": "Developed a full-stack POC and MVP product as the sole developer, which involved: creating a React dashboard\r\nto manage and interface with group-therapy phone call sessions, writing a backend to integrate with a mySQL\r\ndatabase to store user profiles, and setting up a CI/CD pipeline with Heroku.\r\n\n\n• When moving the product from MVP to a production level environment, I trained and managed other engineers to\r\nhelp maintain and write code for user stories and coordinated with the CEO, UX team, remote developers, and advisors.\r\n\n\n• Technology: React, Redux, Express, PostgreSQL, Zang (REST API Service), and Heroku.",
+            "start": {
+                "year": 2018,
+                "month": 10,
+                "timestamp": 1538377200000
+            },
+            "end": {
+                "year": 2019,
+                "month": 8,
+                "timestamp": 1564642800000
+            }
+        },
+        {
+            "title": "iOS Software Engineer Intern",
+            "org": "JP Morgan Chase",
+            "summary": "Developed a customizable UI module, for Chase iOS apps, that could adapt and offer different features depending\r\non the parameters and JSON responses that gets passed to it. The goal was to create different feature sets to help\r\nincrease customer engagement by 3 to 5 times and to standardize UI.\r\n\n\n• Unit tested and implemented user stories in a SCRUM environment, and worked to sync with another Android\r\nteam to keep consistency in design.\r\n\n\n• Technology: Swift, Xcode, Figma",
+            "start": {
+                "year": 2019,
+                "month": 6,
+                "timestamp": 1559372400000
+            },
+            "end": {
+                "year": 2019,
+                "month": 8,
+                "timestamp": 1564642800000
+            }
+        }
+    ],
+    "schools": [
+        {
+            "org": "New York University, Tandon School of Engineering",
+            "degree": "B.S",
+            "field": "Computer Science",
+            "end": {
+                "year": 2021,
+                "month": 5,
+                "timestamp": 1619852400000
+            },
+            "summary": "New York University, Tandon School of Engineering -- May 2021\r\nMajor: B.S Computer Science; Minor: Game Engineering and Integrated Digital Media"
+        }
+    ]
+}
