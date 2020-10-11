@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>OTHER PAGES</h1>
+  <div id="appContent">
+    <HeaderCWF></HeaderCWF>
     <h1>INPUT - UPLOAD A FILE</h1>
     <input
       ref="upload"
@@ -14,10 +14,11 @@
 
 <script>
 import json from "./testFiles/exampleResponse.json";
+import HeaderCWF from "./components/HeaderCWF";
 
 export default {
   name: "App",
-  components: {},
+  components: { HeaderCWF },
   data: function () {
     return {
       exresponse: json,
@@ -51,7 +52,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+/* Resetting styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#appContent {
+  height: 100vh;
+  background-image: url("./assets/footer.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
 </style>
 
 
