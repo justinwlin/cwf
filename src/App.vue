@@ -1,29 +1,27 @@
 <template>
-<!-- HI -->
+  <!-- HI -->
   <div id="appContent">
     <HeaderCWF></HeaderCWF>
-    <h1>INPUT - UPLOAD A FILE</h1>
-    <input
+    <dragAndDrop></dragAndDrop>
+    <!-- <input
       ref="upload"
       type="file"
       name="file-upload"
       @change="onUploadFiles"
-    />
-    <h1>SHOW THE PARSED RESULTS</h1>
+    /> -->
+    <parsedResume></parsedResume>
   </div>
 </template>
 
 <script>
-import json from "./testFiles/exampleResponse.json";
 import HeaderCWF from "./components/HeaderCWF";
-
+import parsedResume from "./components/parsedResume";
+import dragAndDrop from "./components/dragAndDrop";
 export default {
   name: "App",
-  components: { HeaderCWF },
+  components: { HeaderCWF, parsedResume, dragAndDrop },
   data: function () {
-    return {
-      exresponse: json,
-    };
+    return {};
   },
   methods: {
     onUploadFiles() {
@@ -61,13 +59,13 @@ body {
   padding: 0;
 }
 
-#appContent {
+/* #appContent {
   height: 100vh;
   background-image: url("./assets/footer.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
-}
+} */
 </style>
 
 
