@@ -16,11 +16,19 @@
     {{ location }} -->
     <h1>Education</h1>
     <b>{{ school }}</b>
-    <h1>Experience</h1>
+    <br /><b>Start: </b>
+    {{ school_start}}
+    <br /><b>End: </b>
+    {{ school_end}}
+    <br /><b>Major: </b>
+    {{ major }}
+    <br /><b>GPA: </b>
+    {{ GPA }}
+    <br /><h1>Experience</h1>
     <h1>Skills</h1>
   </div>
 </template>
-∂
+
 <script>
 import json from "../testFiles/ophelia.json";
 export default {
@@ -42,37 +50,50 @@ export default {
     yoe() {
       return this.parsedResume.summary.workTime.years
         ? this.parsedResume.summary.workTime.years
-        : "XXX";
+        : "N/A";
     },
     email() {
       return this.parsedResume.emails[0].value
         ? this.parsedResume.emails[0].value
-        : "XXX";
+        : "N/A";
     },
     phone() {
-      return this.parsedResume.phones[0].value;
+      return this.parsedResume.phones[0].value ? this.parsedResume.phones[0].value : "N/A";
     },
     location() {
       if (this.parsedResume.has("location")) {
         return this.parsedResume.location.name
-          ? this.parsedResume.summary.experience
-          : "XXX";
+          ? this.parsedResume.location.name
+          : "N/A";
       }
       return "N/A";
     },
     skills() {
       return this.parsedResume.summary.skills
-        ? this.parsedResume.summary.experience
-        : "XXX";
+        ? this.parsedResume.summary.skills
+        : "N/A";
     },
     school() {
       return this.parsedResume.schools[0].org
-        ? this.parsedResume.summary.experience
-        : "XXX";
+        ? this.parsedResume.schools[0].org
+        : "N/A";
     },
-    // GPA(){
-    //   if (json.has("")
-    // },
+    school_start(){
+      return this.parsedResume.schools[0].start.year
+        ? this.parsedResume.schools[0].start.year
+        : "N/A";
+    },
+    school_end(){
+      return this.parsedResume.schools[0].end.year
+        ? this.parsedResume.schools[0].end.year
+        : "N/A";
+    },
+    GPA(){
+      return this.parsedResume.schools[0].gpa ? this.parsedResume.schools[0].gpa : "N/A";
+    },
+    major(){
+      return this.parsedResume.schools[0].field ? this.parsedResume.schools[0].field : "N/A";
+    }
   },
 };
 </script>
