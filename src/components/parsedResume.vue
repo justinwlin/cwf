@@ -27,7 +27,6 @@
     <br />
     <h1>Experience</h1>
 
-
     <br /><b>Position: </b>
     <div v-for="position in positions" :key="position.title">
       <h1>{{ position.title }}</h1>
@@ -43,9 +42,9 @@
 import json from "../testFiles/ophelia.json";
 export default {
   name: "parsedResume",
-  data: function() {
+  data: function () {
     return {
-      parsedResume: json
+      parsedResume: json,
     };
   },
   computed: {
@@ -113,11 +112,8 @@ export default {
 
     positions() {
       return this.parsedResume.positions;
-    }
-  }
-
+    },
   },
-
 };
 </script>
 
