@@ -81,7 +81,6 @@ export default {
 </script>
 
 <style scoped>
-
 .container {
   box-sizing: border-box;
   width: 40%;
@@ -102,5 +101,6 @@ export default {
 #dragdrop {
   display: flex;
   justify-content: center;
+  margin: 10px;
 }
 </style>

@@ -1,0 +1,98 @@
+{
+    "createdAt": 1603418402788,
+    "lastStoryAt": 1603418402788,
+    "names": [
+        "Zi Yang"
+    ],
+    "emails": [
+        {
+            "value": "yang.ophelia@gmail.com",
+            "canonical": "yang.ophelia@gmail.com"
+        }
+    ],
+    "links": [
+        {
+            "path": "/opheliayzx",
+            "domain": "github.com",
+            "url": "github.com/opheliayzx"
+        },
+        {
+            "path": null,
+            "domain": "femmagazine.com",
+            "url": "femmagazine.com"
+        }
+    ],
+    "phones": [
+        {
+            "value": "647-822-0986",
+            "type": "home"
+        }
+    ],
+    "location": {
+        "name": "Los Angeles, CA",
+        "address": {
+            "CountryCode": "US",
+            "Region": "CA",
+            "Municipality": "Los Angeles"
+        }
+    },
+    "summary": {
+        "experience": "Zi Xi Yang's experience appears to be strongly concentrated in Information Technology (mostly Programming) and slightly concentrated in Engineering (mostly Surveying). Zi Xi Yang's experience appears to be entry level, with 6 months of experience.",
+        "workTime": {
+            "months": 6,
+            "years": 1
+        },
+        "managementTime": {
+            "months": 0,
+            "years": 0
+        },
+        "skills": "SKILLS\r\n\r\nProgramming languages: Python, C++, C, R, JavaScript.\r\nFrameworks & Technologies: Bash, Git, PyTorch, PyQt/Qt, Django, Cytoscape, PostgreSQL, HTML, CSS."
+    },
+    "positions": [
+        {
+            "title": "Bruins in Genomics (B.I.G) Research Intern",
+            "org": "UCLA Brain Mapping Center",
+            "summary": "Built a Python module for downsampling and feature extraction of neuroimages using scattering\r\ntransform methods to quantify the patterns of cell distribution in the brain.\r\n\n\n• Implemented machine learning algorithms such as Random Forest and LDA to predict brain\r\nmicrostructures with 80% accuracy using PyTorch and Scikit-Learn.\r\n\n\n• Constructed a pipeline for optimizing and evaluating novel 3D brain image registration methods for\r\nmultimodal data, with initial volume overlap of 69.7%.",
+            "start": {
+                "year": 2020,
+                "month": 6,
+                "timestamp": 1590994800000
+            },
+            "isCurrent": true
+        },
+        {
+            "org": "DeeCamp, Sinovation Ventures AI Institute",
+            "summary": "DeeCamp is a summer AI institute for college students with over 10,000 applicants each year.\r\n\n\n• Analyzed multimodal data and performed feature engineering using Python and NumPy.\r\n\n\n• Visualized key attributes in the interactions between millions of users and determine feature\r\ncombinations for model training using Cytoscape, a software for visualizing complex networks.\r\n\n\n• Trained machine learning models to classify fake users for a large multimodal dataset from a\r\nfinancial platform with precision of 85.1%.",
+            "start": {
+                "year": 2019,
+                "month": 7,
+                "timestamp": 1561964400000
+            },
+            "end": {
+                "year": 2019,
+                "month": 8,
+                "timestamp": 1564642800000
+            }
+        }
+    ],
+    "schools": [
+        {
+            "org": "University of California, Los Angeles (UCLA)",
+            "degree": "B.S.",
+            "field": "Mathematics of Computation",
+            "gpa": "3.60",
+            "gpaMax": "4.00",
+            "start": {
+                "year": 2018,
+                "month": 9,
+                "timestamp": 1535785200000
+            },
+            "end": {
+                "year": 2022,
+                "month": 6,
+                "timestamp": 1654066800000
+            },
+            "summary": "University of California, Los Angeles (UCLA)\t2018/09-2022/06\r\nB.S. Mathematics of Computation, minor in Bioinformatics\r\nGPA: 3.60/4.00, Dean's honors list\r\n\n\n• Courses: Object oriented programming, Computer Organization, Algorithms in Bioinformatics,\r\nDiscrete Structures, Linear Algebra, Probability and Statistics, Numerical Analysis."
+        }
+    ]
+}
