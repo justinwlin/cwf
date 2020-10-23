@@ -27,12 +27,14 @@
     <br />
     <h1>Experience</h1>
 
+
     <br /><b>Position: </b>
     <div v-for="position in positions" :key="position.title">
       <h1>{{ position.title }}</h1>
       <h2>{{ position.org }}</h2>
       <p>{{ position.summary }}</p>
     </div>
+
     <h1>Skills</h1>
   </div>
 </template>
@@ -108,10 +110,14 @@ export default {
         ? this.parsedResume.schools[0].field
         : "N/A";
     },
+
     positions() {
       return this.parsedResume.positions;
     }
   }
+
+  },
+
 };
 </script>
 
@@ -120,6 +126,7 @@ export default {
 .page {
   width: 75%;
   max-width: 800px;
+  min-width: 500px;
   margin: 0 auto;
   border: 1px solid black;
   padding: 20px;

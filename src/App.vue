@@ -70,14 +70,6 @@ p {
   display: flex;
   justify-content: center;
 }
-
-/* #appContent {
-  height: 100vh;
-  background-image: url("./assets/footer.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
-} */
 </style>
 
 

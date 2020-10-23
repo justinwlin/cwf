@@ -99,6 +99,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 60% auto;
+  min-width: 500px;
 }
 
 #dragdrop {
