@@ -55,13 +55,15 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
 /* Resetting styles */
 html,
 body,
 p {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", Times, serif;
+  font-family: "Montserrat";
 }
 
 #orangeLogo {

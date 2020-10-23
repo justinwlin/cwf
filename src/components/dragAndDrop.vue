@@ -1,10 +1,13 @@
 <template>
   <div>
     <!--UPLOAD-->
-    <p>
-      Upload your resume in PDF or docx file in order to see <br />
-      how it would get parsed by top companies
-    </p>
+    <div id="descriptionText">
+      <p>
+        Upload your resume in PDF or docx file in order to see <br />
+        how it would get parsed by top companies
+      </p>
+    </div>
+
     <div id="dragdrop" @dragover.prevent @drop.prevent>
       <div
         class="container"
@@ -102,5 +105,15 @@ export default {
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+
+#descriptionText {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
 }
 </style>
