@@ -17,14 +17,22 @@
     <h1>Education</h1>
     <b>{{ school }}</b>
     <br /><b>Start: </b>
-    {{ school_start}}
+    {{ school_start }}
     <br /><b>End: </b>
-    {{ school_end}}
+    {{ school_end }}
     <br /><b>Major: </b>
     {{ major }}
     <br /><b>GPA: </b>
     {{ GPA }}
-    <br /><h1>Experience</h1>
+    <br />
+    <h1>Experience</h1>
+
+    <br /><b>Position: </b>
+    <div v-for="position in positions" :key="position.title">
+      <h1>{{ position.title }}</h1>
+      <h2>{{ position.org }}</h2>
+      <p>{{ position.summary }}</p>
+    </div>
     <h1>Skills</h1>
   </div>
 </template>
@@ -33,9 +41,9 @@
 import json from "../testFiles/ophelia.json";
 export default {
   name: "parsedResume",
-  data: function () {
+  data: function() {
     return {
-      parsedResume: json,
+      parsedResume: json
     };
   },
   computed: {
@@ -58,7 +66,9 @@ export default {
         : "N/A";
     },
     phone() {
-      return this.parsedResume.phones[0].value ? this.parsedResume.phones[0].value : "N/A";
+      return this.parsedResume.phones[0].value
+        ? this.parsedResume.phones[0].value
+        : "N/A";
     },
     location() {
       if (this.parsedResume.has("location")) {
@@ -78,23 +88,30 @@ export default {
         ? this.parsedResume.schools[0].org
         : "N/A";
     },
-    school_start(){
+    school_start() {
       return this.parsedResume.schools[0].start.year
         ? this.parsedResume.schools[0].start.year
         : "N/A";
     },
-    school_end(){
+    school_end() {
       return this.parsedResume.schools[0].end.year
         ? this.parsedResume.schools[0].end.year
         : "N/A";
     },
-    GPA(){
-      return this.parsedResume.schools[0].gpa ? this.parsedResume.schools[0].gpa : "N/A";
+    GPA() {
+      return this.parsedResume.schools[0].gpa
+        ? this.parsedResume.schools[0].gpa
+        : "N/A";
     },
-    major(){
-      return this.parsedResume.schools[0].field ? this.parsedResume.schools[0].field : "N/A";
+    major() {
+      return this.parsedResume.schools[0].field
+        ? this.parsedResume.schools[0].field
+        : "N/A";
+    },
+    positions() {
+      return this.parsedResume.positions;
     }
-  },
+  }
 };
 </script>
 
