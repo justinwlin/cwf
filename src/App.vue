@@ -2,6 +2,9 @@
   <!-- HI -->
   <div id="appContent">
     <HeaderCWF></HeaderCWF>
+    <div id="orangeLogo">
+      <img src="./assets/orangeLogo.png" />
+    </div>
     <dragAndDrop></dragAndDrop>
     <!-- <input
       ref="upload"
@@ -54,9 +57,16 @@ export default {
 <style>
 /* Resetting styles */
 html,
-body {
+body,
+p {
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", Times, serif;
+}
+
+#orangeLogo {
+  display: flex;
+  justify-content: center;
 }
 
 /* #appContent {

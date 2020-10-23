@@ -1,18 +1,24 @@
 <template>
   <div>
     <!--UPLOAD-->
-    <h1>Upload images</h1>
-    <div id="app" @dragover.prevent @drop.prevent>
-      <div class="container" @drop="handleFileDrop">
-        Add your files here:
-        <br />
+    <p>
+      Upload your resume in PDF or docx file in order to see <br />
+      how it would get parsed by top companies
+    </p>
+    <div id="dragdrop" @dragover.prevent @drop.prevent>
+      <div
+        class="container"
+        @drop="handleFileDrop"
+        @click="this.$refs.upload.click()"
+      >
+        <!-- <p>Add your files here:</p> -->
         <input
           ref="upload"
           type="file"
           name="file-upload"
           @change="onUploadFiles"
+          hidden
         />
-        <ul></ul>
       </div>
     </div>
   </div>
@@ -75,8 +81,26 @@ export default {
 </script>
 
 <style scoped>
+
 .container {
-  background-color: blue;
-  height: 50px;
+  box-sizing: border-box;
+  width: 40%;
+  height: 20em;
+  background-color: #f3faff;
+  border: 3px dashed lightskyblue;
+  padding: 50px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/upload.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 60% auto;
+}
+
+#dragdrop {
+  display: flex;
+  justify-content: center;
 }
 </style>
