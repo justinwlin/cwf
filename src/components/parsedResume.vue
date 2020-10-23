@@ -6,12 +6,17 @@
     <h1>Basic Info</h1>
     <b>Name: </b>
     {{ name }}
-    <br/><b>Years of experience: </b>
+    <br /><b>Years of experience: </b>
     {{ yoe }}
-    <br/><b>Phone: </b>
-    <br/><b>Email: </b>
-    <br/><b>Location: </b>
+    <!-- <br /><b>Phone: </b>
+    {{ phone }} -->
+    {{ phone }}
+    <br /><b>Email: </b>
+    {{ email }}
+    <!-- <br /><b>Location: </b>
+    {{ location }} -->
     <h1>Education</h1>
+    <b>{{ school }}</b>
     <h1>Experience</h1>
     <h1>Skills</h1>
   </div>
@@ -40,13 +45,10 @@ export default {
       return this.parsedResume.emails[0].value;
     },
     phone() {
-      if (json.has("phones")) {
-        return this.parsedResume.phones[0].value;
-      }
-      return "N/A";
+      return this.parsedResume;
     },
     location() {
-      if (json.has("location")) {
+      if (this.parsedResume.has("location")) {
         return this.parsedResume.location.name;
       }
       return "N/A";
@@ -54,6 +56,12 @@ export default {
     skills() {
       return this.parsedResume.summary.skills;
     },
+    school() {
+      return this.parsedResume.schools[0].org;
+    },
+    // GPA(){
+    //   if (json.has("")
+    // },
   },
 };
 </script>
