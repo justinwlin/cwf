@@ -36,19 +36,23 @@ export default {
       [...droppedFiles].forEach((f) => {
         this.files.push(f);
       });
-      console.log(this.files.target[0]);
-
-      this.color = "#444444";
+      let formdata = new FormData();
+      formdata.append("resume", this.files[0], this.files[0].name);
+      this.apiRequest(formdata);
+      this.files = 0;
     },
     onUploadFiles() {
       console.log(this.$refs.upload.files[0]);
-      var formdata = new FormData();
+      let formdata = new FormData();
       formdata.append(
         "resume",
         this.$refs.upload.files[0],
         this.$refs.upload.files[0].name
       );
-
+      this.$refs.upload.value = "";
+      this.apiRequest(formdata);
+    },
+    apiRequest(formdata) {
       var requestOptions = {
         method: "POST",
         body: formdata,
@@ -59,8 +63,11 @@ export default {
       let proxyCORS = "https://cors-anywhere.herokuapp.com/";
       let targetURL = "https://jobs.lever.co/parseResume";
       fetch(proxyCORS + targetURL, requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          return result;
+        })
         .catch((error) => console.log("error", error));
     },
   },
