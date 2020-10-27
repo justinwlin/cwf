@@ -24,17 +24,22 @@
         />
       </div>
     </div>
+    <parsedResume v-bind="result"></parsedResume>
   </div>
 </template>
 
 <!-- Javascript -->
 <script>
+import parsedResume from "./parsedResume";
+
 export default {
   name: "dragAndDrop",
+  components: { parsedResume },
   props: {},
   data: function () {
     return {
       files: [],
+      result: "",
     };
   },
   methods: {
@@ -75,7 +80,7 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
-          return result;
+          this.result = result;
         })
         .catch((error) => console.log("error", error));
     },

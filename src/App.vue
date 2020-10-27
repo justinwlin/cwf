@@ -12,17 +12,15 @@
       name="file-upload"
       @change="onUploadFiles"
     /> -->
-    <parsedResume></parsedResume>
   </div>
 </template>
 
 <script>
 import HeaderCWF from "./components/HeaderCWF";
-import parsedResume from "./components/parsedResume";
 import dragAndDrop from "./components/dragAndDrop";
 export default {
   name: "App",
-  components: { HeaderCWF, parsedResume, dragAndDrop },
+  components: { HeaderCWF, dragAndDrop },
   data: function () {
     return {};
   },

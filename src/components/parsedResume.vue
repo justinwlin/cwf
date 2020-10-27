@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    {{ parsedResumeResults }}
     <h1>View Parsed Resume</h1>
     <h1>Summary</h1>
     {{ summary }}
@@ -42,9 +43,12 @@
 import json from "../testFiles/ophelia.json";
 export default {
   name: "parsedResume",
+  props: ["results"],
+
   data: function () {
     return {
       parsedResume: json,
+      parsedResumeResults: this.results,
     };
   },
   computed: {
