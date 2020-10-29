@@ -49,7 +49,7 @@ export default {
       let formdata = new FormData();
       formdata.append("resume", this.files[0], this.files[0].name);
       this.apiRequest(formdata);
-      this.files = 0;
+      this.files = [];
     },
     onUploadFiles() {
       console.log(this.$refs.upload.files[0]);
