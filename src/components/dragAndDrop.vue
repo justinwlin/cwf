@@ -7,7 +7,6 @@
         how it would get parsed by top companies
       </p>
     </div>
-
     <div id="dragdrop" @dragover.prevent @drop.prevent>
       <div
         class="container"
@@ -24,17 +23,19 @@
         />
       </div>
     </div>
+    <parsedResume :jsonResponse="jsonResponse"></parsedResume>
   </div>
 </template>
 
 <!-- Javascript -->
 <script>
+import parsedResume from "./parsedResume";
 export default {
-  name: "dragAndDrop",
-  props: {},
+  components: { parsedResume },
   data: function () {
     return {
       files: [],
+      jsonResponse: "",
     };
   },
   methods: {
@@ -75,7 +76,7 @@ export default {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
-          return result;
+          this.jsonResponse = result;
         })
         .catch((error) => console.log("error", error));
     },

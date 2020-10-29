@@ -1,135 +1,222 @@
 <template>
   <div class="page">
-    <h1>View Parsed Resume</h1>
-    <h1>Summary</h1>
-    {{ summary }}
-    <h1>Basic Info</h1>
-    <b>Name:</b>
-    {{ name }}
-    <br />
-    <b>Years of experience:</b>
-    {{ yoe }}
-    <br />
-    <b>Phone:</b>
-    {{ phone }}
-    <br />
-    <b>Email:</b>
-    {{ email }}
-    <!-- <br /><b>Location: </b>
+    <span v-if="jsonResponse">
+      <h1>View Parsed Resume</h1>
+      <h1>Summary</h1>
+      {{ summary }}
+      <h1>Basic Info</h1>
+      <b>Name:</b>
+      {{ name }}
+      <br />
+      <b>Years of experience:</b>
+      {{ yoe }}
+      <br />
+      <b>Phone:</b>
+      {{ phone }}
+      <br />
+      <b>Email:</b>
+      {{ email }}
+      <!-- <br /><b>Location: </b>
     {{ location }}-->
-    <h1>Education</h1>
-    <b>{{ school }}</b>
-    <br />
-    <b>Start:</b>
-    {{ school_start }}
-    <br />
-    <b>End:</b>
-    {{ school_end }}
-    <br />
-    <b>Major:</b>
-    {{ major }}
-    <br />
-    <b>GPA:</b>
-    {{ GPA }}
-    <br />
-    <h1>Experience</h1>
-
-    <br />
-    <b>Position:</b>
-    <div v-for="position in positions" :key="position.title">
-      <h1>{{ position.title }}</h1>
-      <h2>{{ position.org }}</h2>
+      <h1>Education</h1>
+      <b>{{ school }}</b>
+      <br />
       <b>Start:</b>
-      {{position.start.month}}
-      {{position.start.year}}
+      {{ school_start }}
       <br />
       <b>End:</b>
-      {{position.isCurrent ? "Current Position" : position.end.year}}
-      <p>{{ position.summary }}</p>
-    </div>
+      {{ school_end }}
+      <br />
+      <b>Major:</b>
+      {{ major }}
+      <br />
+      <b>GPA:</b>
+      {{ GPA }}
+      <br />
+      <h1>Experience</h1>
+      <br />
+      <div v-for="position in positions" :key="position.title">
+        <h1>{{ position.title }}</h1>
+        <h2>{{ position.org }}</h2>
+        <b>Start:</b>
+        {{ position.start.month }}
+        {{ position.start.year }}
+        <br />
+        <b>End:</b>
+        {{ position.isCurrent ? "Current Position" : position.end.year }}
+        <p>{{ position.summary }}</p>
+      </div>
 
-    <h1>Skills</h1>
-    <b>Skills:</b>
-    {{skills}}
+      <h1>Skills</h1>
+      <b>Skills:</b>
+      {{ skills }}
+    </span>
   </div>
 </template>
 
 <script>
-import json from "../testFiles/ophelia.json";
+// import json from "../testFiles/ophelia.json";
 export default {
   name: "parsedResume",
-  data: function() {
-    return {
-      parsedResume: json
-    };
+  props: ["jsonResponse"],
+  data: function () {
+    return {};
   },
   computed: {
     summary() {
-      return this.parsedResume.summary.experience
-        ? this.parsedResume.summary.experience
-        : "XXX";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.summary.experience
+          ? this.jsonResponse.summary.experience
+          : "XXX";
+      } catch {
+        return "";
+      }
     },
     name() {
-      return this.parsedResume.names[0] ? this.parsedResume.names[0] : "XXX";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.names[0] ? this.jsonResponse.names[0] : "XXX";
+      } catch {
+        return "";
+      }
     },
     yoe() {
-      return this.parsedResume.summary.workTime.years
-        ? this.parsedResume.summary.workTime.years
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.summary.workTime.years
+          ? this.jsonResponse.summary.workTime.years
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     email() {
-      return this.parsedResume.emails[0].value
-        ? this.parsedResume.emails[0].value
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.emails[0].value
+          ? this.jsonResponse.emails[0].value
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     phone() {
-      return this.parsedResume.phones[0].value
-        ? this.parsedResume.phones[0].value
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.phones[0].value
+          ? this.jsonResponse.phones[0].value
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     location() {
-      if (this.parsedResume.has("location")) {
-        return this.parsedResume.location.name
-          ? this.parsedResume.location.name
-          : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
       }
-      return "N/A";
+      try {
+        if (this.jsonResponse.has("location")) {
+          return this.jsonResponse.location.name
+            ? this.jsonResponse.location.name
+            : "N/A";
+        }
+      } catch {
+        return "";
+      }
+      return "";
     },
     skills() {
-      return this.parsedResume.summary.skills
-        ? this.parsedResume.summary.skills
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.summary.skills
+          ? this.jsonResponse.summary.skills
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     school() {
-      return this.parsedResume.schools[0].org
-        ? this.parsedResume.schools[0].org
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.schools[0].org
+          ? this.jsonResponse.schools[0].org
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     school_start() {
-      return this.parsedResume.schools[0].start.year
-        ? this.parsedResume.schools[0].start.year
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.schools[0].start.year
+          ? this.jsonResponse.schools[0].start.year
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     school_end() {
-      return this.parsedResume.schools[0].end.year
-        ? this.parsedResume.schools[0].end.year
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      return this.jsonResponse.schools[0].end.year
+        ? this.jsonResponse.schools[0].end.year
         : "N/A";
     },
     GPA() {
-      return this.parsedResume.schools[0].gpa
-        ? this.parsedResume.schools[0].gpa
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.schools[0].gpa
+          ? this.jsonResponse.schools[0].gpa
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
     major() {
-      return this.parsedResume.schools[0].field
-        ? this.parsedResume.schools[0].field
-        : "N/A";
+      if (this.jsonResponse == "") {
+        return "";
+      }
+
+      try {
+        return this.jsonResponse.schools[0].field
+          ? this.jsonResponse.schools[0].field
+          : "N/A";
+      } catch {
+        return "";
+      }
     },
 
     positions() {
-      return this.parsedResume.positions;
-    }
-  }
+      if (this.jsonResponse == "") {
+        return "";
+      }
+      try {
+        return this.jsonResponse.positions;
+      } catch {
+        return "";
+      }
+    },
+  },
 };
 </script>
 
