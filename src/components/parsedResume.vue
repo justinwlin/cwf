@@ -4,37 +4,53 @@
     <h1>Summary</h1>
     {{ summary }}
     <h1>Basic Info</h1>
-    <b>Name: </b>
+    <b>Name:</b>
     {{ name }}
-    <br /><b>Years of experience: </b>
+    <br />
+    <b>Years of experience:</b>
     {{ yoe }}
-    <br /><b>Phone: </b>
+    <br />
+    <b>Phone:</b>
     {{ phone }}
-    <br /><b>Email: </b>
+    <br />
+    <b>Email:</b>
     {{ email }}
     <!-- <br /><b>Location: </b>
-    {{ location }} -->
+    {{ location }}-->
     <h1>Education</h1>
     <b>{{ school }}</b>
-    <br /><b>Start: </b>
+    <br />
+    <b>Start:</b>
     {{ school_start }}
-    <br /><b>End: </b>
+    <br />
+    <b>End:</b>
     {{ school_end }}
-    <br /><b>Major: </b>
+    <br />
+    <b>Major:</b>
     {{ major }}
-    <br /><b>GPA: </b>
+    <br />
+    <b>GPA:</b>
     {{ GPA }}
     <br />
     <h1>Experience</h1>
 
-    <br /><b>Position: </b>
+    <br />
+    <b>Position:</b>
     <div v-for="position in positions" :key="position.title">
       <h1>{{ position.title }}</h1>
       <h2>{{ position.org }}</h2>
+      <b>Start:</b>
+      {{position.start.month}}
+      {{position.start.year}}
+      <br />
+      <b>End:</b>
+      {{position.isCurrent ? "Current Position" : position.end.year}}
       <p>{{ position.summary }}</p>
     </div>
 
     <h1>Skills</h1>
+    <b>Skills:</b>
+    {{skills}}
   </div>
 </template>
 
@@ -42,9 +58,9 @@
 import json from "../testFiles/ophelia.json";
 export default {
   name: "parsedResume",
-  data: function () {
+  data: function() {
     return {
-      parsedResume: json,
+      parsedResume: json
     };
   },
   computed: {
@@ -112,8 +128,8 @@ export default {
 
     positions() {
       return this.parsedResume.positions;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -124,7 +140,10 @@ export default {
   max-width: 800px;
   min-width: 500px;
   margin: 0 auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 20px;
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 </style>
