@@ -1,11 +1,15 @@
 <template>
   <div class="page">
     <span v-if="jsonResponse">
+<<<<<<< HEAD
       <b>Name:</b>
       {{ name }}
       <br />
       <b>Years of experience:</b>
       {{ yoe }}
+=======
+ 
+>>>>>>> b8880b913d50d154c48eb462926b4082170d103a
       <br />
       <b>Phone:</b>
       {{ phone }}
