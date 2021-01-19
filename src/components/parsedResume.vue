@@ -1,7 +1,5 @@
 <template>
   <div class="page">
-    <button> button 3 </button>
-    <button> button 2 </button>
     <span v-if="jsonResponse">
       <h1>View Parsed Resume</h1>
       <h1>Summary</h1>
