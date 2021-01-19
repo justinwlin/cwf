@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <button> button </button>
     <span v-if="jsonResponse">
       button ui update
       <br />
