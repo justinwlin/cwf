@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <button> button </button>
     <span v-if="jsonResponse">
 <<<<<<< HEAD
       <b>Name:</b>
