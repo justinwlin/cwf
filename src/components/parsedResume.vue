@@ -1,16 +1,12 @@
 <template>
   <div class="page">
-    <button> button </button>
     <span v-if="jsonResponse">
-<<<<<<< HEAD
+      button logic has been created
       <b>Name:</b>
       {{ name }}
       <br />
       <b>Years of experience:</b>
       {{ yoe }}
-=======
- 
->>>>>>> b8880b913d50d154c48eb462926b4082170d103a
       <br />
       <b>Phone:</b>
       {{ phone }}
